@@ -1,0 +1,9 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Private vulnerability report
+    url: https://github.com/DocLens/DocLens/security
+    about: Report active vulnerabilities privately. Do not open public security issues for sensitive reports.
+  - name: Project wiki
+    url: https://github.com/DocLens/DocLens/wiki
+    about: Read architecture, setup, and agent-design documentation before filing broad questions.
+

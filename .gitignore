@@ -1,0 +1,42 @@
+# Leftover Stitch/source HTML files
+stitch_source.html
+schemes_source.html
+scheme_details_source.html
+
+# Old frontend directory (renamed to frontend/)
+/UI/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+.venv_clean/
+*.egg-info/
+dist/
+build/
+
+# Env files (never commit secrets)
+.env
+.env.*
+*.env.*
+tempjunk/
+
+# Logs
+*.log
+logs/
+
+# Node
+node_modules/
+.next/
+*.tsbuildinfo
+
+# Next.js
+out/
+.next/
+
+.vercel

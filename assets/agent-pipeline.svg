@@ -1,0 +1,302 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 520" width="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0B1121"/>
+      <stop offset="50%" style="stop-color:#162244"/>
+      <stop offset="100%" style="stop-color:#0B1121"/>
+    </linearGradient>
+    <linearGradient id="orangeGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#F97316"/>
+      <stop offset="100%" style="stop-color:#F59E0B"/>
+    </linearGradient>
+    <linearGradient id="tealGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#14B8A6"/>
+      <stop offset="100%" style="stop-color:#2DD4BF"/>
+    </linearGradient>
+    <linearGradient id="indigoGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#6366F1"/>
+      <stop offset="100%" style="stop-color:#818CF8"/>
+    </linearGradient>
+    <linearGradient id="pinkGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#EC4899"/>
+      <stop offset="100%" style="stop-color:#F472B6"/>
+    </linearGradient>
+    <linearGradient id="emeraldGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#10B981"/>
+      <stop offset="100%" style="stop-color:#34D399"/>
+    </linearGradient>
+    <linearGradient id="amberGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#F59E0B"/>
+      <stop offset="100%" style="stop-color:#FBBF24"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="glowStrong">
+      <feGaussianBlur stdDeviation="6" result="coloredBlur"/>
+      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="softGlow">
+      <feGaussianBlur stdDeviation="14" result="coloredBlur"/>
+      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <pattern id="grid" width="30" height="30" patternUnits="userSpaceOnUse">
+      <path d="M 30 0 L 0 0 0 30" fill="none" stroke="rgba(255,255,255,0.02)" stroke-width="0.5"/>
+    </pattern>
+    <marker id="arrowWhite" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#CBD5E1"/>
+    </marker>
+    <marker id="arrowAmber" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#FBBF24"/>
+    </marker>
+  </defs>
+
+  <rect width="1200" height="520" fill="url(#bgGrad)"/>
+  <rect width="1200" height="520" fill="url(#grid)"/>
+
+  <!-- Animated ambient orbs -->
+  <circle cx="150" cy="210" r="160" fill="#F97316" opacity="0.03" filter="url(#softGlow)">
+    <animate attributeName="cx" values="150;250;150" dur="12s" repeatCount="indefinite"/>
+    <animate attributeName="r" values="160;190;160" dur="9s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="1050" cy="210" r="160" fill="#6366F1" opacity="0.03" filter="url(#softGlow)">
+    <animate attributeName="cx" values="1050;950;1050" dur="12s" repeatCount="indefinite"/>
+    <animate attributeName="r" values="160;190;160" dur="9s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="600" cy="210" r="120" fill="#14B8A6" opacity="0.02" filter="url(#softGlow)">
+    <animate attributeName="cy" values="210;180;210" dur="11s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- Section Title -->
+  <text x="600" y="42" text-anchor="middle" font-family="'Segoe UI', system-ui, sans-serif" font-weight="800" font-size="28" fill="#F1F5F9" letter-spacing="-0.5">🤖 Autonomous Agent Pipeline</text>
+  <rect x="405" y="54" width="390" height="2.5" rx="1.25" fill="url(#tealGrad)" opacity="0.6">
+    <animate attributeName="width" values="390;430;390" dur="4s" repeatCount="indefinite"/>
+    <animate attributeName="x" values="405;385;405" dur="4s" repeatCount="indefinite"/>
+  </rect>
+  <text x="600" y="78" text-anchor="middle" font-family="'Segoe UI', system-ui, sans-serif" font-weight="400" font-size="13" fill="#94A3B8">Every profile update triggers our multi-agent orchestration — 100% deterministic, transparent, and reproducible</text>
+
+  <!-- ================================================================ -->
+  <!--                    DATA FLOW PARTICLES                            -->
+  <!-- ================================================================ -->
+
+  <g>
+    <circle r="5" fill="#FBBF24" filter="url(#glow)">
+      <animateMotion dur="1.5s" repeatCount="indefinite" path="M160,195 L218,195"/>
+    </circle>
+    <circle r="3" fill="#FBBF24" opacity="0.4">
+      <animateMotion dur="1.5s" repeatCount="indefinite" begin="0.75s" path="M160,195 L218,195"/>
+    </circle>
+  </g>
+
+  <g>
+    <circle r="5" fill="#A5B4FC" filter="url(#glow)">
+      <animateMotion dur="1.5s" repeatCount="indefinite" begin="0.3s" path="M348,195 L410,195"/>
+    </circle>
+    <circle r="3" fill="#A5B4FC" opacity="0.4">
+      <animateMotion dur="1.5s" repeatCount="indefinite" begin="1.05s" path="M348,195 L410,195"/>
+    </circle>
+  </g>
+
+  <g>
+    <circle r="5" fill="#FB923C" filter="url(#glow)">
+      <animateMotion dur="1.5s" repeatCount="indefinite" begin="0.6s" path="M538,195 L600,195"/>
+    </circle>
+    <circle r="3" fill="#FB923C" opacity="0.4">
+      <animateMotion dur="1.5s" repeatCount="indefinite" begin="1.35s" path="M538,195 L600,195"/>
+    </circle>
+  </g>
+
+  <g>
+    <circle r="5" fill="#5EEAD4" filter="url(#glow)">
+      <animateMotion dur="1.5s" repeatCount="indefinite" begin="0.9s" path="M728,195 L790,195"/>
+    </circle>
+    <circle r="3" fill="#5EEAD4" opacity="0.4">
+      <animateMotion dur="1.5s" repeatCount="indefinite" begin="1.65s" path="M728,195 L790,195"/>
+    </circle>
+  </g>
+
+  <g>
+    <circle r="5" fill="#F472B6" filter="url(#glow)">
+      <animateMotion dur="1.5s" repeatCount="indefinite" begin="1.2s" path="M918,195 L990,195"/>
+    </circle>
+    <circle r="3" fill="#F472B6" opacity="0.4">
+      <animateMotion dur="1.5s" repeatCount="indefinite" begin="1.95s" path="M918,195 L990,195"/>
+    </circle>
+  </g>
+
+  <!-- ================================================================ -->
+  <!--                    CITIZEN INPUT (START NODE)                     -->
+  <!-- ================================================================ -->
+
+  <g>
+    <ellipse cx="90" cy="195" rx="66" ry="30" fill="rgba(245,158,11,0.12)" stroke="url(#amberGrad)" stroke-width="2"/>
+    <ellipse cx="90" cy="195" rx="66" ry="30" fill="none" stroke="url(#amberGrad)" stroke-width="1" opacity="0.4">
+      <animate attributeName="rx" values="66;74;66" dur="2s" repeatCount="indefinite"/>
+      <animate attributeName="ry" values="30;36;30" dur="2s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.4;0;0.4" dur="2s" repeatCount="indefinite"/>
+    </ellipse>
+    <text x="90" y="191" text-anchor="middle" font-family="'Segoe UI', system-ui, sans-serif" font-weight="700" font-size="15" fill="#FBBF24">Citizen</text>
+    <text x="90" y="209" text-anchor="middle" font-family="'Segoe UI', system-ui, sans-serif" font-weight="700" font-size="15" fill="#FBBF24">Input</text>
+  </g>
+
+  <!-- ================================================================ -->
+  <!--                    CONNECTION ARROWS                              -->
+  <!-- ================================================================ -->
+
+  <line x1="156" y1="195" x2="216" y2="195" stroke="#94A3B8" stroke-width="2" stroke-dasharray="6 3" marker-end="url(#arrowAmber)">
+    <animate attributeName="stroke-dashoffset" values="0;-18" dur="1.2s" repeatCount="indefinite"/>
+  </line>
+  <line x1="348" y1="195" x2="408" y2="195" stroke="#94A3B8" stroke-width="2" stroke-dasharray="6 3" marker-end="url(#arrowWhite)">
+    <animate attributeName="stroke-dashoffset" values="0;-18" dur="1.2s" begin="0.3s" repeatCount="indefinite"/>
+  </line>
+  <line x1="538" y1="195" x2="598" y2="195" stroke="#94A3B8" stroke-width="2" stroke-dasharray="6 3" marker-end="url(#arrowWhite)">
+    <animate attributeName="stroke-dashoffset" values="0;-18" dur="1.2s" begin="0.6s" repeatCount="indefinite"/>
+  </line>
+  <line x1="728" y1="195" x2="788" y2="195" stroke="#94A3B8" stroke-width="2" stroke-dasharray="6 3" marker-end="url(#arrowWhite)">
+    <animate attributeName="stroke-dashoffset" values="0;-18" dur="1.2s" begin="0.9s" repeatCount="indefinite"/>
+  </line>
+  <line x1="918" y1="195" x2="988" y2="195" stroke="#94A3B8" stroke-width="2" stroke-dasharray="6 3" marker-end="url(#arrowWhite)">
+    <animate attributeName="stroke-dashoffset" values="0;-18" dur="1.2s" begin="1.2s" repeatCount="indefinite"/>
+  </line>
+
+  <!-- ================================================================ -->
+  <!--                    AGENT NODES                                    -->
+  <!-- ================================================================ -->
+
+  <!-- Intake Agent -->
+  <g transform="translate(220, 143)">
+    <rect x="0" y="0" width="128" height="102" rx="14" fill="none" stroke="url(#indigoGrad)" stroke-width="1" opacity="0.3">
+      <animate attributeName="opacity" values="0.3;0.6;0.3" dur="2.5s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="4" y="4" width="120" height="94" rx="12" fill="rgba(99,102,241,0.08)" stroke="rgba(99,102,241,0.25)" stroke-width="1.5"/>
+    <rect x="4" y="4" width="120" height="3" rx="1.5" fill="url(#indigoGrad)">
+      <animate attributeName="opacity" values="0.5;1;0.5" dur="1.8s" repeatCount="indefinite"/>
+    </rect>
+    <text x="64" y="38" text-anchor="middle" font-family="'Segoe UI', system-ui, sans-serif" font-weight="700" font-size="16" fill="#A5B4FC">Intake Agent</text>
+    <text x="64" y="68" text-anchor="middle" font-family="'Segoe UI', system-ui, sans-serif" font-weight="500" font-size="11" fill="#CBD5E1">Validates schema</text>
+    <text x="64" y="84" text-anchor="middle" font-family="'Segoe UI', system-ui, sans-serif" font-weight="500" font-size="11" fill="#CBD5E1">&amp; sanitizes inputs</text>
+  </g>
+
+  <!-- Eligibility Agent -->
+  <g transform="translate(410, 143)">
+    <rect x="0" y="0" width="128" height="102" rx="14" fill="none" stroke="url(#orangeGrad)" stroke-width="1" opacity="0.3">
+      <animate attributeName="opacity" values="0.3;0.6;0.3" dur="2.5s" begin="0.5s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="4" y="4" width="120" height="94" rx="12" fill="rgba(249,115,22,0.08)" stroke="rgba(249,115,22,0.25)" stroke-width="1.5"/>
+    <rect x="4" y="4" width="120" height="3" rx="1.5" fill="url(#orangeGrad)">
+      <animate attributeName="opacity" values="0.5;1;0.5" dur="1.8s" begin="0.5s" repeatCount="indefinite"/>
+    </rect>
+    <text x="64" y="38" text-anchor="middle" font-family="'Segoe UI', system-ui, sans-serif" font-weight="700" font-size="14" fill="#FB923C">Eligibility Agent</text>
+    <text x="64" y="68" text-anchor="middle" font-family="'Segoe UI', system-ui, sans-serif" font-weight="500" font-size="11" fill="#CBD5E1">Pure rule evaluation</text>
+    <text x="64" y="84" text-anchor="middle" font-family="'Segoe UI', system-ui, sans-serif" font-weight="500" font-size="11" fill="#CBD5E1">1,000+ schemes</text>
+  </g>
+
+  <!-- Ranking Agent -->
+  <g transform="translate(600, 143)">
+    <rect x="0" y="0" width="128" height="102" rx="14" fill="none" stroke="url(#tealGrad)" stroke-width="1" opacity="0.3">
+      <animate attributeName="opacity" values="0.3;0.6;0.3" dur="2.5s" begin="1s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="4" y="4" width="120" height="94" rx="12" fill="rgba(20,184,166,0.08)" stroke="rgba(20,184,166,0.25)" stroke-width="1.5"/>
+    <rect x="4" y="4" width="120" height="3" rx="1.5" fill="url(#tealGrad)">
+      <animate attributeName="opacity" values="0.5;1;0.5" dur="1.8s" begin="1s" repeatCount="indefinite"/>
+    </rect>
+    <text x="64" y="38" text-anchor="middle" font-family="'Segoe UI', system-ui, sans-serif" font-weight="700" font-size="14" fill="#5EEAD4">Ranking Agent</text>
+    <text x="64" y="68" text-anchor="middle" font-family="'Segoe UI', system-ui, sans-serif" font-weight="500" font-size="11" fill="#CBD5E1">Sorts by benefit</text>
+    <text x="64" y="84" text-anchor="middle" font-family="'Segoe UI', system-ui, sans-serif" font-weight="500" font-size="11" fill="#CBD5E1">value × confidence</text>
+  </g>
+
+  <!-- DocGap Agent -->
+  <g transform="translate(790, 143)">
+    <rect x="0" y="0" width="128" height="102" rx="14" fill="none" stroke="url(#pinkGrad)" stroke-width="1" opacity="0.3">
+      <animate attributeName="opacity" values="0.3;0.6;0.3" dur="2.5s" begin="1.5s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="4" y="4" width="120" height="94" rx="12" fill="rgba(236,72,153,0.08)" stroke="rgba(236,72,153,0.25)" stroke-width="1.5"/>
+    <rect x="4" y="4" width="120" height="3" rx="1.5" fill="url(#pinkGrad)">
+      <animate attributeName="opacity" values="0.5;1;0.5" dur="1.8s" begin="1.5s" repeatCount="indefinite"/>
+    </rect>
+    <text x="64" y="38" text-anchor="middle" font-family="'Segoe UI', system-ui, sans-serif" font-weight="700" font-size="14" fill="#F472B6">DocGap Agent</text>
+    <text x="64" y="68" text-anchor="middle" font-family="'Segoe UI', system-ui, sans-serif" font-weight="500" font-size="11" fill="#CBD5E1">Missing credential</text>
+    <text x="64" y="84" text-anchor="middle" font-family="'Segoe UI', system-ui, sans-serif" font-weight="500" font-size="11" fill="#CBD5E1">gap analysis</text>
+  </g>
+
+  <!-- Drafter Agent -->
+  <g transform="translate(990, 143)">
+    <rect x="0" y="0" width="128" height="102" rx="14" fill="none" stroke="url(#emeraldGrad)" stroke-width="1" opacity="0.3">
+      <animate attributeName="opacity" values="0.3;0.6;0.3" dur="2.5s" begin="2s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="4" y="4" width="120" height="94" rx="12" fill="rgba(16,185,129,0.08)" stroke="rgba(16,185,129,0.25)" stroke-width="1.5"/>
+    <rect x="4" y="4" width="120" height="3" rx="1.5" fill="url(#emeraldGrad)">
+      <animate attributeName="opacity" values="0.5;1;0.5" dur="1.8s" begin="2s" repeatCount="indefinite"/>
+    </rect>
+    <text x="64" y="38" text-anchor="middle" font-family="'Segoe UI', system-ui, sans-serif" font-weight="700" font-size="14" fill="#34D399">Drafter Agent</text>
+    <text x="64" y="68" text-anchor="middle" font-family="'Segoe UI', system-ui, sans-serif" font-weight="500" font-size="11" fill="#CBD5E1">Formal application</text>
+    <text x="64" y="84" text-anchor="middle" font-family="'Segoe UI', system-ui, sans-serif" font-weight="500" font-size="11" fill="#CBD5E1">letter generation</text>
+
+    <rect x="0" y="0" width="128" height="102" rx="14" fill="none" stroke="#34D399" stroke-width="1.5" opacity="0.3">
+      <animate attributeName="opacity" values="0.3;0;0.3" dur="2s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="scale" values="1;1.06;1" dur="2s" repeatCount="indefinite" additive="sum"/>
+    </rect>
+  </g>
+
+  <!-- ================================================================ -->
+  <!--                    STATUS BADGES                                  -->
+  <!-- ================================================================ -->
+
+  <g font-family="'Segoe UI', system-ui, sans-serif">
+    <rect x="238" y="258" width="92" height="22" rx="11" fill="rgba(99,102,241,0.12)" stroke="rgba(99,102,241,0.2)" stroke-width="0.5"/>
+    <text x="284" y="273" text-anchor="middle" font-size="10" fill="#A5B4FC" font-weight="600">Schema validated</text>
+
+    <rect x="428" y="258" width="92" height="22" rx="11" fill="rgba(249,115,22,0.12)" stroke="rgba(249,115,22,0.2)" stroke-width="0.5"/>
+    <text x="474" y="273" text-anchor="middle" font-size="10" fill="#FB923C" font-weight="600">Deterministic</text>
+
+    <rect x="618" y="258" width="92" height="22" rx="11" fill="rgba(20,184,166,0.12)" stroke="rgba(20,184,166,0.2)" stroke-width="0.5"/>
+    <text x="664" y="273" text-anchor="middle" font-size="10" fill="#5EEAD4" font-weight="600">Scored &amp; ranked</text>
+
+    <rect x="808" y="258" width="92" height="22" rx="11" fill="rgba(236,72,153,0.12)" stroke="rgba(236,72,153,0.2)" stroke-width="0.5"/>
+    <text x="854" y="273" text-anchor="middle" font-size="10" fill="#F472B6" font-weight="600">Gaps identified</text>
+
+    <rect x="1008" y="258" width="92" height="22" rx="11" fill="rgba(16,185,129,0.12)" stroke="rgba(16,185,129,0.2)" stroke-width="0.5"/>
+    <text x="1054" y="273" text-anchor="middle" font-size="10" fill="#34D399" font-weight="600">Draft ready</text>
+  </g>
+
+  <!-- ================================================================ -->
+  <!--                    BOTTOM INFO BAR                                -->
+  <!-- ================================================================ -->
+
+  <g>
+    <rect x="0" y="305" width="1200" height="215" fill="rgba(0,0,0,0.3)"/>
+    <text x="600" y="332" text-anchor="middle" font-family="'Segoe UI', system-ui, sans-serif" font-weight="700" font-size="15" fill="#CBD5E1">Pipeline Guarantees</text>
+
+    <line x1="50" y1="355" x2="1150" y2="355" stroke="rgba(99,102,241,0.1)" stroke-width="1.5"/>
+    <circle r="4" fill="#818CF8" filter="url(#glow)">
+      <animateMotion dur="5s" repeatCount="indefinite" path="M50,355 L1150,355"/>
+    </circle>
+    <circle r="3" fill="#14B8A6" filter="url(#glow)">
+      <animateMotion dur="5s" repeatCount="indefinite" begin="1.66s" path="M50,355 L1150,355"/>
+    </circle>
+    <circle r="3" fill="#F97316" filter="url(#glow)">
+      <animateMotion dur="5s" repeatCount="indefinite" begin="3.33s" path="M50,355 L1150,355"/>
+    </circle>
+
+    <g font-family="'Segoe UI', system-ui, sans-serif" font-size="13" fill="#CBD5E1">
+      <circle cx="60" cy="387" r="4" fill="#F97316"/>
+      <text x="72" y="392">100% Deterministic — no LLM involvement in legal/financial decisions</text>
+
+      <circle cx="60" cy="412" r="4" fill="#14B8A6"/>
+      <text x="72" y="417">Fully Auditable — every match is reproducible with the same inputs</text>
+
+      <circle cx="60" cy="437" r="4" fill="#6366F1"/>
+      <text x="72" y="442">Sub-second pipeline — all agents execute in a single synchronous pass</text>
+
+      <circle cx="60" cy="462" r="4" fill="#EC4899"/>
+      <text x="72" y="467">Transparent — match explanations include exact rule criteria triggered</text>
+
+      <circle cx="640" cy="387" r="4" fill="#10B981"/>
+      <text x="652" y="392">Zero hallucinations — rule engine uses hardcoded thresholds, not AI</text>
+
+      <circle cx="640" cy="412" r="4" fill="#F59E0B"/>
+      <text x="652" y="417">Template fallback — 100% uptime even if AI providers are unreachable</text>
+    </g>
+  </g>
+</svg>

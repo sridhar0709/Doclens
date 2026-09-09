@@ -1,0 +1,401 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" width="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0B1121"/>
+      <stop offset="50%" style="stop-color:#162244"/>
+      <stop offset="100%" style="stop-color:#0B1121"/>
+    </linearGradient>
+    <linearGradient id="orangeGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#F97316"/>
+      <stop offset="100%" style="stop-color:#F59E0B"/>
+    </linearGradient>
+    <linearGradient id="tealGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#14B8A6"/>
+      <stop offset="100%" style="stop-color:#2DD4BF"/>
+    </linearGradient>
+    <linearGradient id="indigoGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#6366F1"/>
+      <stop offset="100%" style="stop-color:#818CF8"/>
+    </linearGradient>
+    <linearGradient id="pinkGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#EC4899"/>
+      <stop offset="100%" style="stop-color:#F472B6"/>
+    </linearGradient>
+    <linearGradient id="emeraldGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#10B981"/>
+      <stop offset="100%" style="stop-color:#34D399"/>
+    </linearGradient>
+    <linearGradient id="cyanGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#06B6D4"/>
+      <stop offset="100%" style="stop-color:#22D3EE"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="glowStrong">
+      <feGaussianBlur stdDeviation="6" result="coloredBlur"/>
+      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="softGlow">
+      <feGaussianBlur stdDeviation="12" result="coloredBlur"/>
+      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <pattern id="grid" width="30" height="30" patternUnits="userSpaceOnUse">
+      <path d="M 30 0 L 0 0 0 30" fill="none" stroke="rgba(255,255,255,0.025)" stroke-width="0.5"/>
+    </pattern>
+
+    <!-- Arrow marker -->
+    <marker id="arrowWhite" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#94A3B8"/>
+    </marker>
+
+    <!-- Glowing arrow marker -->
+    <marker id="arrowOrange" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#F97316"/>
+    </marker>
+    <marker id="arrowTeal" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#14B8A6"/>
+    </marker>
+    <marker id="arrowIndigo" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#818CF8"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="700" fill="url(#bgGrad)"/>
+  <rect width="1200" height="700" fill="url(#grid)"/>
+
+  <!-- Animated ambient orbs -->
+  <circle cx="180" cy="180" r="200" fill="#F97316" opacity="0.035" filter="url(#softGlow)">
+    <animate attributeName="cx" values="180;300;180" dur="14s" repeatCount="indefinite"/>
+    <animate attributeName="r" values="200;240;200" dur="10s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="1020" cy="520" r="220" fill="#6366F1" opacity="0.035" filter="url(#softGlow)">
+    <animate attributeName="cx" values="1020;900;1020" dur="16s" repeatCount="indefinite"/>
+    <animate attributeName="r" values="220;260;220" dur="12s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="600" cy="350" r="150" fill="#14B8A6" opacity="0.025" filter="url(#softGlow)">
+    <animate attributeName="cy" values="350;280;350" dur="13s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- Section Title -->
+  <text x="600" y="50" text-anchor="middle" font-family="'Segoe UI', system-ui, sans-serif" font-weight="800" font-size="30" fill="#F1F5F9" letter-spacing="-0.5">
+    🏛️ System Architecture
+  </text>
+  <rect x="460" y="64" width="280" height="2.5" rx="1.25" fill="url(#orangeGrad)" opacity="0.5">
+    <animate attributeName="width" values="280;320;280" dur="4s" repeatCount="indefinite"/>
+    <animate attributeName="x" values="460;440;460" dur="4s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- ================================================================ -->
+  <!--                    DATA FLOW ANIMATION LAYER                      -->
+  <!-- ================================================================ -->
+
+  <!-- Animated data packets flowing Frontend -> Backend -->
+  <g>
+    <circle r="5" fill="#818CF8" filter="url(#glow)">
+      <animateMotion dur="2.5s" repeatCount="indefinite" path="M600,165 L600,212"/>
+    </circle>
+    <circle r="3" fill="#818CF8" opacity="0.6">
+      <animateMotion dur="2.5s" repeatCount="indefinite" begin="0.8s" path="M600,165 L600,212"/>
+    </circle>
+    <circle r="2" fill="#818CF8" opacity="0.3">
+      <animateMotion dur="2.5s" repeatCount="indefinite" begin="1.6s" path="M600,165 L600,212"/>
+    </circle>
+  </g>
+
+  <!-- Animated data packets flowing Backend -> Services (left) -->
+  <g>
+    <circle r="4" fill="#F97316" filter="url(#glow)">
+      <animateMotion dur="3s" repeatCount="indefinite" begin="0s" path="M455,285 L455,312 L230,312 L230,352"/>
+    </circle>
+    <circle r="2.5" fill="#F97316" opacity="0.5">
+      <animateMotion dur="3s" repeatCount="indefinite" begin="1.5s" path="M455,285 L455,312 L230,312 L230,352"/>
+    </circle>
+  </g>
+
+  <!-- Animated data packets flowing Backend -> Services (center) -->
+  <g>
+    <circle r="4" fill="#EC4899" filter="url(#glow)">
+      <animateMotion dur="3s" repeatCount="indefinite" begin="1s" path="M600,285 L600,352"/>
+    </circle>
+    <circle r="2.5" fill="#EC4899" opacity="0.5">
+      <animateMotion dur="3s" repeatCount="indefinite" begin="2.5s" path="M600,285 L600,352"/>
+    </circle>
+  </g>
+
+  <!-- Animated data packets flowing Backend -> Services (right) -->
+  <g>
+    <circle r="4" fill="#34D399" filter="url(#glow)">
+      <animateMotion dur="3s" repeatCount="indefinite" begin="0.5s" path="M745,285 L745,312 L970,312 L970,352"/>
+    </circle>
+    <circle r="2.5" fill="#34D399" opacity="0.5">
+      <animateMotion dur="3s" repeatCount="indefinite" begin="2s" path="M745,285 L745,312 L970,312 L970,352"/>
+    </circle>
+  </g>
+
+  <!-- Animated data packets flowing Pipeline -> Groq (horizontal) -->
+  <g>
+    <circle r="3.5" fill="#F59E0B" filter="url(#glow)">
+      <animateMotion dur="2.5s" repeatCount="indefinite" path="M405,395 L437,395"/>
+    </circle>
+    <circle r="3.5" fill="#F472B6" filter="url(#glow)">
+      <animateMotion dur="2.5s" repeatCount="indefinite" begin="1.2s" path="M760,395 L792,395"/>
+    </circle>
+  </g>
+
+  <!-- Animated data packets flowing up from Services to Backend (response) -->
+  <g>
+    <circle r="3" fill="#14B8A6" filter="url(#glow)">
+      <animateMotion dur="3.5s" repeatCount="indefinite" begin="0.8s" path="M230,355 L230,318 L455,318 L455,285"/>
+    </circle>
+    <circle r="2" fill="#14B8A6" opacity="0.5">
+      <animateMotion dur="3.5s" repeatCount="indefinite" begin="2.5s" path="M970,355 L970,318 L745,318 L745,285"/>
+    </circle>
+  </g>
+
+  <!-- Animated data packets flowing Backend -> Frontend (response) -->
+  <g>
+    <circle r="3.5" fill="#2DD4BF" filter="url(#glow)">
+      <animateMotion dur="3s" repeatCount="indefinite" begin="1.5s" path="M600,215 L600,163" rotate="180"/>
+    </circle>
+  </g>
+
+  <!-- ================================================================ -->
+  <!--                    LAYER 1: FRONTEND                              -->
+  <!-- ================================================================ -->
+
+  <g>
+    <!-- Outer glowing border -->
+    <rect x="360" y="85" width="480" height="80" rx="14" fill="none" stroke="url(#indigoGrad)" stroke-width="1" opacity="0.3">
+      <animate attributeName="opacity" values="0.3;0.6;0.3" dur="3s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="365" y="90" width="470" height="70" rx="12" fill="rgba(99,102,241,0.1)" stroke="rgba(99,102,241,0.3)" stroke-width="1.5"/>
+    <!-- Top accent bar -->
+    <rect x="365" y="90" width="470" height="4" rx="2" fill="url(#indigoGrad)">
+      <animate attributeName="opacity" values="0.6;1;0.6" dur="2s" repeatCount="indefinite"/>
+    </rect>
+    <text x="600" y="120" text-anchor="middle" font-family="'Segoe UI', system-ui, sans-serif" font-weight="700" font-size="18" fill="#A5B4FC">Next.js 16 Frontend</text>
+    <text x="600" y="143" text-anchor="middle" font-family="'Segoe UI', system-ui, sans-serif" font-weight="400" font-size="12" fill="#94A3B8">Dashboard · Chat · Document Vault · Settings UI</text>
+  </g>
+
+  <!-- ================================================================ -->
+  <!--                    LAYER 2: BACKEND API                           -->
+  <!-- ================================================================ -->
+
+  <g>
+    <rect x="325" y="220" width="550" height="65" rx="14" fill="none" stroke="url(#tealGrad)" stroke-width="1" opacity="0.3">
+      <animate attributeName="opacity" values="0.3;0.6;0.3" dur="3.5s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="330" y="225" width="540" height="55" rx="12" fill="rgba(20,184,166,0.1)" stroke="rgba(20,184,166,0.3)" stroke-width="1.5"/>
+    <rect x="330" y="225" width="540" height="4" rx="2" fill="url(#tealGrad)">
+      <animate attributeName="opacity" values="0.6;1;0.6" dur="2.5s" repeatCount="indefinite"/>
+    </rect>
+    <text x="600" y="249" text-anchor="middle" font-family="'Segoe UI', system-ui, sans-serif" font-weight="700" font-size="18" fill="#5EEAD4">FastAPI Backend Engine</text>
+    <text x="600" y="269" text-anchor="middle" font-family="'Segoe UI', system-ui, sans-serif" font-weight="400" font-size="12" fill="#94A3B8">Pydantic v2 · Rate Limiter · CORS · JWT Auth Middleware</text>
+  </g>
+
+  <!-- ================================================================ -->
+  <!--                    CONNECTION ARROWS                              -->
+  <!-- ================================================================ -->
+
+  <!-- Frontend -> Backend connection -->
+  <g>
+    <line x1="600" y1="160" x2="600" y2="218" stroke="#64748B" stroke-width="2" stroke-dasharray="6 3" marker-end="url(#arrowTeal)">
+      <animate attributeName="stroke-dashoffset" values="0;-18" dur="1.5s" repeatCount="indefinite"/>
+    </line>
+  </g>
+
+  <!-- Backend -> Left (Pipeline) -->
+  <path d="M 460 285 L 460 310 L 230 310 L 230 350" stroke="#64748B" stroke-width="2" fill="none" stroke-dasharray="6 3" marker-end="url(#arrowOrange)">
+    <animate attributeName="stroke-dashoffset" values="0;-18" dur="2s" repeatCount="indefinite"/>
+  </path>
+
+  <!-- Backend -> Center (AI/Ocr) -->
+  <line x1="600" y1="285" x2="600" y2="350" stroke="#64748B" stroke-width="2" stroke-dasharray="6 3" marker-end="url(#arrowOrange)">
+    <animate attributeName="stroke-dashoffset" values="0;-18" dur="2s" repeatCount="indefinite" begin="0.3s"/>
+  </line>
+
+  <!-- Backend -> Right (Supabase) -->
+  <path d="M 740 285 L 740 310 L 970 310 L 970 350" stroke="#64748B" stroke-width="2" fill="none" stroke-dasharray="6 3" marker-end="url(#arrowOrange)">
+    <animate attributeName="stroke-dashoffset" values="0;-18" dur="2s" repeatCount="indefinite" begin="0.6s"/>
+  </path>
+
+  <!-- ================================================================ -->
+  <!--                    LAYER 3: SERVICES                              -->
+  <!-- ================================================================ -->
+
+  <!-- Left: Multi-Agent Pipeline -->
+  <g transform="translate(55, 355)">
+    <rect x="0" y="0" width="350" height="95" rx="14" fill="none" stroke="url(#orangeGrad)" stroke-width="1" opacity="0.3">
+      <animate attributeName="opacity" values="0.3;0.6;0.3" dur="3s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="5" y="5" width="340" height="85" rx="12" fill="rgba(249,115,22,0.1)" stroke="rgba(249,115,22,0.3)" stroke-width="1.5"/>
+    <rect x="5" y="5" width="340" height="4" rx="2" fill="url(#orangeGrad)">
+      <animate attributeName="opacity" values="0.6;1;0.6" dur="2s" begin="0.5s" repeatCount="indefinite"/>
+    </rect>
+    <text x="175" y="32" text-anchor="middle" font-family="'Segoe UI', system-ui, sans-serif" font-weight="700" font-size="16" fill="#FB923C">Multi-Agent Pipeline</text>
+
+    <!-- Mini pipeline agent blocks inside -->
+    <g transform="translate(15, 48)">
+      <rect x="0" y="0" width="58" height="28" rx="6" fill="rgba(249,115,22,0.2)" stroke="rgba(249,115,22,0.3)" stroke-width="0.8"/>
+      <text x="29" y="19" text-anchor="middle" font-family="'Segoe UI', system-ui, sans-serif" font-size="9" fill="#FB923C">Intake</text>
+    </g>
+    <g transform="translate(78, 48)">
+      <rect x="0" y="0" width="64" height="28" rx="6" fill="rgba(249,115,22,0.2)" stroke="rgba(249,115,22,0.3)" stroke-width="0.8"/>
+      <text x="32" y="19" text-anchor="middle" font-family="'Segoe UI', system-ui, sans-serif" font-size="9" fill="#FB923C">Eligibility</text>
+    </g>
+    <g transform="translate(147, 48)">
+      <rect x="0" y="0" width="58" height="28" rx="6" fill="rgba(249,115,22,0.2)" stroke="rgba(249,115,22,0.3)" stroke-width="0.8"/>
+      <text x="29" y="19" text-anchor="middle" font-family="'Segoe UI', system-ui, sans-serif" font-size="9" fill="#FB923C">Ranking</text>
+    </g>
+    <g transform="translate(210, 48)">
+      <rect x="0" y="0" width="56" height="28" rx="6" fill="rgba(249,115,22,0.2)" stroke="rgba(249,115,22,0.3)" stroke-width="0.8"/>
+      <text x="28" y="19" text-anchor="middle" font-family="'Segoe UI', system-ui, sans-serif" font-size="9" fill="#FB923C">DocGap</text>
+    </g>
+    <g transform="translate(271, 48)">
+      <rect x="0" y="0" width="58" height="28" rx="6" fill="rgba(249,115,22,0.2)" stroke="rgba(249,115,22,0.3)" stroke-width="0.8"/>
+      <text x="29" y="19" text-anchor="middle" font-family="'Segoe UI', system-ui, sans-serif" font-size="9" fill="#FB923C">Drafter</text>
+    </g>
+
+    <!-- Animated data particles through agents -->
+    <circle r="3" fill="#FBBF24" filter="url(#glow)">
+      <animateMotion dur="4s" repeatCount="indefinite" path="M25,62 L82,62 L150,62 L213,62 L275,62"/>
+    </circle>
+    <circle r="2" fill="#FBBF24" opacity="0.5">
+      <animateMotion dur="4s" repeatCount="indefinite" begin="2s" path="M25,62 L82,62 L150,62 L213,62 L275,62"/>
+    </circle>
+  </g>
+
+  <!-- Center: AI Inference + OCR -->
+  <g transform="translate(440, 355)">
+    <rect x="0" y="0" width="320" height="95" rx="14" fill="none" stroke="url(#pinkGrad)" stroke-width="1" opacity="0.3">
+      <animate attributeName="opacity" values="0.3;0.6;0.3" dur="3s" begin="1s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="5" y="5" width="310" height="85" rx="12" fill="rgba(236,72,153,0.1)" stroke="rgba(236,72,153,0.3)" stroke-width="1.5"/>
+    <rect x="5" y="5" width="310" height="4" rx="2" fill="url(#pinkGrad)">
+      <animate attributeName="opacity" values="0.6;1;0.6" dur="2s" begin="1.5s" repeatCount="indefinite"/>
+    </rect>
+    <text x="160" y="32" text-anchor="middle" font-family="'Segoe UI', system-ui, sans-serif" font-weight="700" font-size="16" fill="#F472B6">AI Inference + OCR Engine</text>
+
+    <g transform="translate(15, 48)">
+      <rect x="0" y="0" width="130" height="28" rx="6" fill="rgba(236,72,153,0.2)" stroke="rgba(236,72,153,0.3)" stroke-width="0.8"/>
+      <text x="65" y="19" text-anchor="middle" font-family="'Segoe UI', system-ui, sans-serif" font-size="9" fill="#F472B6">Groq Llama-3.3-70B</text>
+    </g>
+    <g transform="translate(165, 48)">
+      <rect x="0" y="0" width="130" height="28" rx="6" fill="rgba(236,72,153,0.2)" stroke="rgba(236,72,153,0.3)" stroke-width="0.8"/>
+      <text x="65" y="19" text-anchor="middle" font-family="'Segoe UI', system-ui, sans-serif" font-size="9" fill="#F472B6">OCRSpace Parser</text>
+    </g>
+  </g>
+
+  <!-- Right: Supabase Platform -->
+  <g transform="translate(795, 355)">
+    <rect x="0" y="0" width="350" height="95" rx="14" fill="none" stroke="url(#emeraldGrad)" stroke-width="1" opacity="0.3">
+      <animate attributeName="opacity" values="0.3;0.6;0.3" dur="3s" begin="2s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="5" y="5" width="340" height="85" rx="12" fill="rgba(16,185,129,0.1)" stroke="rgba(16,185,129,0.3)" stroke-width="1.5"/>
+    <rect x="5" y="5" width="340" height="4" rx="2" fill="url(#emeraldGrad)">
+      <animate attributeName="opacity" values="0.6;1;0.6" dur="2s" begin="2.5s" repeatCount="indefinite"/>
+    </rect>
+    <text x="175" y="32" text-anchor="middle" font-family="'Segoe UI', system-ui, sans-serif" font-weight="700" font-size="16" fill="#34D399">Supabase Platform</text>
+
+    <g transform="translate(15, 48)">
+      <rect x="0" y="0" width="100" height="28" rx="6" fill="rgba(16,185,129,0.2)" stroke="rgba(16,185,129,0.3)" stroke-width="0.8"/>
+      <text x="50" y="19" text-anchor="middle" font-family="'Segoe UI', system-ui, sans-serif" font-size="9" fill="#34D399">PostgreSQL + RLS</text>
+    </g>
+    <g transform="translate(120, 48)">
+      <rect x="0" y="0" width="100" height="28" rx="6" fill="rgba(16,185,129,0.2)" stroke="rgba(16,185,129,0.3)" stroke-width="0.8"/>
+      <text x="50" y="19" text-anchor="middle" font-family="'Segoe UI', system-ui, sans-serif" font-size="9" fill="#34D399">Auth (GoTrue)</text>
+    </g>
+    <g transform="translate(225, 48)">
+      <rect x="0" y="0" width="100" height="28" rx="6" fill="rgba(16,185,129,0.2)" stroke="rgba(16,185,129,0.3)" stroke-width="0.8"/>
+      <text x="50" y="19" text-anchor="middle" font-family="'Segoe UI', system-ui, sans-serif" font-size="9" fill="#34D399">Storage + Edge Fn</text>
+    </g>
+  </g>
+
+  <!-- Horizontal data flow arrows between services -->
+  <g>
+    <line x1="405" y1="400" x2="435" y2="400" stroke="#64748B" stroke-width="1.5" stroke-dasharray="4 2" marker-end="url(#arrowWhite)">
+      <animate attributeName="stroke-dashoffset" values="0;-12" dur="1.5s" repeatCount="indefinite"/>
+    </line>
+    <text x="420" y="415" text-anchor="middle" font-family="'Segoe UI', system-ui, sans-serif" font-size="8" fill="#64748B" transform="rotate(0, 420, 415)">data</text>
+  </g>
+
+  <!-- ================================================================ -->
+  <!--                    LEGEND / LABELS                                -->
+  <!-- ================================================================ -->
+
+  <!-- Request/Response labels -->
+  <g font-family="'Segoe UI', system-ui, sans-serif" font-size="10">
+    <rect x="665" y="180" width="70" height="18" rx="9" fill="rgba(99,102,241,0.15)" stroke="rgba(99,102,241,0.2)" stroke-width="0.5"/>
+    <text x="700" y="192" text-anchor="middle" fill="#818CF8">HTTPS / REST</text>
+  </g>
+  <g font-family="'Segoe UI', system-ui, sans-serif" font-size="10">
+    <rect x="665" y="195" width="70" height="18" rx="9" fill="rgba(20,184,166,0.15)" stroke="rgba(20,184,166,0.2)" stroke-width="0.5"/>
+    <text x="700" y="207" text-anchor="middle" fill="#2DD4BF">JWT Auth</text>
+  </g>
+
+  <!-- ================================================================ -->
+  <!--                    BOTTOM: DATA FLOW TRAFFIC                      -->
+  <!-- ================================================================ -->
+
+  <!-- Pipeline -> AI Service flow line -->
+  <g>
+    <path d="M 230 450 L 230 490 L 600 490 L 600 450" stroke="#475569" stroke-width="1.5" fill="none" stroke-dasharray="5 3" opacity="0.5">
+      <animate attributeName="stroke-dashoffset" values="0;-16" dur="2s" repeatCount="indefinite"/>
+    </path>
+    <!-- Data particle on this path -->
+    <circle r="3.5" fill="#F59E0B" filter="url(#glow)">
+      <animateMotion dur="4s" repeatCount="indefinite" path="M230,450 L230,490 L600,490 L600,450"/>
+    </circle>
+  </g>
+
+  <g>
+    <rect x="0" y="510" width="1200" height="190" fill="rgba(0,0,0,0.3)"/>
+    <text x="600" y="540" text-anchor="middle" font-family="'Segoe UI', system-ui, sans-serif" font-weight="700" font-size="15" fill="#CBD5E1">Security &amp; Compliance Guarantees</text>
+
+    <!-- Data flow animation in bottom bar -->
+    <g>
+      <line x1="50" y1="580" x2="1150" y2="580" stroke="rgba(99,102,241,0.15)" stroke-width="1.5"/>
+      <circle r="4" fill="#818CF8" filter="url(#glow)">
+        <animateMotion dur="6s" repeatCount="indefinite" path="M50,580 L1150,580"/>
+      </circle>
+      <circle r="3" fill="#14B8A6" filter="url(#glow)">
+        <animateMotion dur="6s" repeatCount="indefinite" begin="2s" path="M50,580 L1150,580"/>
+      </circle>
+      <circle r="2.5" fill="#F97316" filter="url(#glow)">
+        <animateMotion dur="6s" repeatCount="indefinite" begin="4s" path="M50,580 L1150,580"/>
+      </circle>
+      <circle r="2" fill="#EC4899" filter="url(#glow)">
+        <animateMotion dur="6s" repeatCount="indefinite" begin="1s" path="M50,580 L1150,580"/>
+      </circle>
+      <circle r="2" fill="#34D399" filter="url(#glow)">
+        <animateMotion dur="6s" repeatCount="indefinite" begin="3s" path="M50,580 L1150,580"/>
+      </circle>
+      <circle r="2" fill="#F59E0B" filter="url(#glow)">
+        <animateMotion dur="6s" repeatCount="indefinite" begin="5s" path="M50,580 L1150,580"/>
+      </circle>
+    </g>
+
+    <g font-family="'Segoe UI', system-ui, sans-serif" font-size="13" fill="#CBD5E1">
+      <circle cx="50" cy="615" r="4" fill="#F97316"/>
+      <text x="62" y="619">100% Deterministic eligibility — LLMs never decide legal outcomes</text>
+
+      <circle cx="50" cy="640" r="4" fill="#14B8A6"/>
+      <text x="62" y="644">PostgreSQL RLS — all data scoped to authenticated user_id</text>
+
+      <circle cx="50" cy="665" r="4" fill="#6366F1"/>
+      <text x="62" y="669">Zero PII logging — names, phones, addresses stripped from all logs</text>
+
+      <circle cx="650" cy="615" r="4" fill="#EC4899"/>
+      <text x="662" y="619">Short-lived signed URLs (300s TTL) for document access</text>
+
+      <circle cx="650" cy="640" r="4" fill="#10B981"/>
+      <text x="662" y="644">CORS allowlist enforcement — no wildcard origins in production</text>
+
+      <circle cx="650" cy="665" r="4" fill="#F59E0B"/>
+      <text x="662" y="669">Anti-prompt injection guardrails on all chat endpoints</text>
+    </g>
+  </g>
+</svg>

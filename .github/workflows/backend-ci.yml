@@ -1,0 +1,57 @@
+name: Backend CI
+
+# Run the backend test suite and a dependency vulnerability audit on every PR
+# and push that touches the Backend/ directory.
+on:
+  pull_request:
+    paths:
+      - "Backend/**"
+      - ".github/workflows/backend-ci.yml"
+  push:
+    branches: [main]
+    paths:
+      - "Backend/**"
+      - ".github/workflows/backend-ci.yml"
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: Backend
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run tests
+        # Run from the repo root so `Backend.<module>` imports resolve.
+        working-directory: ${{ github.workspace }}
+        run: python -m pytest Backend -q
+
+  audit:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: Backend
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install pip-audit
+        run: python -m pip install pip-audit==2.9.0
+
+      - name: Audit pinned dependencies for known vulnerabilities
+        run: pip-audit -r requirements.txt --strict

@@ -1,0 +1,59 @@
+# Render Blueprint for the DocLens backend.
+# Docs: https://render.com/docs/blueprint-spec
+#
+# Deploys the FastAPI service from the Docker image built by Backend/Dockerfile.
+# Secrets (GEMINI_API_KEY, SENTRY_DSN, REDIS_URL) are marked sync:false so Render
+# prompts for them in the dashboard instead of storing them in the repo.
+
+services:
+  - type: web
+    name: doclens-backend
+    runtime: docker
+    plan: free
+    dockerfilePath: Backend/Dockerfile
+    dockerContext: Backend
+    healthCheckPath: /api/health
+    autoDeploy: true
+    envVars:
+      # --- Core app ---
+      - key: ENVIRONMENT
+        value: production
+      - key: DEBUG
+        value: "false"
+
+      # --- CORS: set to the deployed frontend origin(s), comma-separated. ---
+      - key: ALLOWED_ORIGINS
+        sync: false
+
+      # --- Rate limiting ---
+      - key: RATE_LIMIT
+        value: 20/minute
+      # Optional Redis-backed rate-limit store; leave unset for in-memory.
+      - key: REDIS_URL
+        sync: false
+
+      # --- LLM (Gemini) — optional; app degrades gracefully without a key. ---
+      - key: LLM_ENABLED
+        value: "true"
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: GEMINI_MODEL
+        value: gemini-2.0-flash
+      - key: GEMINI_FALLBACK_MODEL
+        value: gemini-1.5-flash
+      - key: GEMINI_TIMEOUT_SECONDS
+        value: "8"
+
+      # --- Observability ---
+      - key: SENTRY_DSN
+        sync: false
+      - key: LOG_LEVEL
+        value: INFO
+      - key: LOG_JSON
+        value: "true"
+
+      # --- Request state cache ---
+      - key: REQUEST_CACHE_TTL_SECONDS
+        value: "1800"
+      - key: REQUEST_CACHE_MAX_SIZE
+        value: "1000"

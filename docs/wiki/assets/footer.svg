@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 80" width="800" height="80">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a"><animate attributeName="stop-color" values="#0f172a;#1e3a5f;#0f172a" dur="10s" repeatCount="indefinite"/></stop>
+      <stop offset="100%" stop-color="#1e293b"><animate attributeName="stop-color" values="#1e293b;#0f172a;#1e293b" dur="10s" repeatCount="indefinite"/></stop>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8"/><stop offset="50%" stop-color="#818cf8"/><stop offset="100%" stop-color="#38bdf8"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="80" rx="8" fill="url(#bg)" stroke="#1e293b" stroke-width="1"/>
+
+  <!-- Decorative top bar -->
+  <rect x="0" y="0" width="800" height="2" fill="url(#accent)" opacity="0.5">
+    <animate attributeName="opacity" values="0.5;0.8;0.5" dur="3s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- Copyright -->
+  <g opacity="0"><animate attributeName="opacity" values="0;1" dur="0.5s" fill="freeze"/>
+    <text x="400" y="22" text-anchor="middle" font-family="'Segoe UI',Arial,sans-serif" font-size="10" fill="#64748b">
+      © 2026 DocLens · MIT License
+    </text>
+  </g>
+
+  <!-- Links row -->
+  <g opacity="0"><animate attributeName="opacity" values="0;1" dur="0.5s" begin="0.3s" fill="freeze"/>
+    <!-- GitHub -->
+    <a href="https://github.com/DocLens/DocLens" target="_blank">
+      <rect x="190" y="32" width="72" height="20" rx="10" fill="#1e293b" stroke="#334155" stroke-width="0.8"/>
+      <text x="226" y="46" text-anchor="middle" font-family="'Segoe UI',Arial,sans-serif" font-size="9" fill="#94a3b8">GitHub</text>
+    </a>
+    <!-- Report Issue -->
+    <a href="https://github.com/DocLens/DocLens/issues" target="_blank">
+      <rect x="270" y="32" width="90" height="20" rx="10" fill="#1e293b" stroke="#334155" stroke-width="0.8"/>
+      <text x="315" y="46" text-anchor="middle" font-family="'Segoe UI',Arial,sans-serif" font-size="9" fill="#94a3b8">Report Issue</text>
+    </a>
+    <!-- Security -->
+    <a href="https://github.com/DocLens/DocLens/security/policy" target="_blank">
+      <rect x="368" y="32" width="72" height="20" rx="10" fill="#1e293b" stroke="#334155" stroke-width="0.8"/>
+      <text x="404" y="46" text-anchor="middle" font-family="'Segoe UI',Arial,sans-serif" font-size="9" fill="#94a3b8">Security</text>
+    </a>
+    <!-- License -->
+    <a href="https://github.com/DocLens/DocLens/blob/main/LICENSE" target="_blank">
+      <rect x="448" y="32" width="72" height="20" rx="10" fill="#1e293b" stroke="#334155" stroke-width="0.8"/>
+      <text x="484" y="46" text-anchor="middle" font-family="'Segoe UI',Arial,sans-serif" font-size="9" fill="#94a3b8">License</text>
+    </a>
+    <!-- Docker -->
+    <a href="https://hub.docker.com/r/doclens/backend" target="_blank">
+      <rect x="528" y="32" width="72" height="20" rx="10" fill="#1e293b" stroke="#334155" stroke-width="0.8"/>
+      <text x="564" y="46" text-anchor="middle" font-family="'Segoe UI',Arial,sans-serif" font-size="9" fill="#94a3b8">Docker</text>
+    </a>
+  </g>
+
+  <!-- Tech stack mini-badges -->
+  <g opacity="0"><animate attributeName="opacity" values="0;1" dur="0.4s" begin="0.6s" fill="freeze"/>
+    <text x="400" y="66" text-anchor="middle" font-family="'Segoe UI',Arial,sans-serif" font-size="8" fill="#475569">
+      FastAPI · Next.js · Supabase · PostgreSQL · Python · Tailwind CSS
+    </text>
+  </g>
+</svg>
